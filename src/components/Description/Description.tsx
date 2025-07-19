@@ -1,6 +1,7 @@
+import React from "react";
 import css from "./Description.module.css";
 
-const Description = () => {
+const Description: React.FC = () => {
   return (
     <div className={css.description}>
       <h1>Sip Happens Café</h1>

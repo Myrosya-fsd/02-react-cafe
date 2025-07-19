@@ -1,6 +1,21 @@
+import React from "react";
 import css from "./Options.module.css";
 
-function Options({ onLeaveFeedback, onReset, totalFeedback }) {
+// Типи можливих значень фідбеку
+type FeedbackOption = "good" | "neutral" | "bad";
+
+// Типи пропсів
+type OptionsProps = {
+  onLeaveFeedback: (option: FeedbackOption) => void;
+  onReset: () => void;
+  totalFeedback: number;
+};
+
+const Options: React.FC<OptionsProps> = ({
+  onLeaveFeedback,
+  onReset,
+  totalFeedback,
+}) => {
   return (
     <div>
       <ul className={css.options}>
@@ -24,7 +39,7 @@ function Options({ onLeaveFeedback, onReset, totalFeedback }) {
         </li>
         <li>
           {totalFeedback > 0 && (
-            <button className={css.btn} onClick={onReset}>
+            <button className={css.reset} onClick={onReset}>
               Reset
             </button>
           )}
@@ -32,6 +47,6 @@ function Options({ onLeaveFeedback, onReset, totalFeedback }) {
       </ul>
     </div>
   );
-}
+};
 
 export default Options;

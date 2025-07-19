@@ -1,8 +1,22 @@
+import React from "react";
 import css from "./Feedback.module.css";
 
-import React from "react";
+// Типи пропсів
+type FeedbackProps = {
+  good: number;
+  neutral: number;
+  bad: number;
+  totalFeedback: number;
+  positiveFeedback: number;
+};
 
-const Feedback = ({ good, bad, neutral, totalFeedback, positiveFeedback }) => {
+const Feedback: React.FC<FeedbackProps> = ({
+  good,
+  neutral,
+  bad,
+  totalFeedback,
+  positiveFeedback,
+}) => {
   return (
     <div>
       <ul className={css.feedback}>

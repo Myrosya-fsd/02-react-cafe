@@ -9,4 +9,15 @@
 .btn {
   padding: 5px 15px;
   border-radius: 4px;
+  border: none;
+  background-color: rgb(65, 65, 167);
+  color: white;
+}
+
+.reset {
+  padding: 5px 15px;
+  border-radius: 4px;
+  border: none;
+  background-color: rgb(211, 58, 58);
+  color: white;
 }
