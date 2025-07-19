@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import Description from "../Description/Description";
-import Feedback from "../Feedback/Feedback";
-import Options from "../Options/Options";
+import VoteOptions from "../CafeInfo/CafeInfo";
+import Feedback from "../VoteStats/VoteStats";
+import Options from "../VoteOptions/VoteOptions";
 import Notification from "../Notification/Notification";
 
 import "./App.css";
@@ -40,26 +40,27 @@ const App: React.FC = () => {
     setFeedback({ good: 0, neutral: 0, bad: 0 });
   };
 
-  const totalFeedback: number = feedback.good + feedback.neutral + feedback.bad;
+  const totalVotes: number = feedback.good + feedback.neutral + feedback.bad;
 
-  const positiveFeedback: number =
-    totalFeedback > 0 ? Math.round((feedback.good / totalFeedback) * 100) : 0;
+  const positiveRate: number =
+    //totalFeedback > 0 ? Math.round((feedback.good / totalFeedback) * 100) : 0;
+    totalVotes ? Math.round((feedback.good / totalVotes) * 100) : 0;
 
   return (
     <div>
-      <Description />
+      <VoteOptions />
       <Options
         onLeaveFeedback={onLeaveFeedback}
         onReset={onReset}
-        totalFeedback={totalFeedback}
+        totalFeedback={totalVotes}
       />
-      {totalFeedback > 0 ? (
+      {totalVotes > 0 ? (
         <Feedback
           good={feedback.good}
           neutral={feedback.neutral}
           bad={feedback.bad}
-          totalFeedback={totalFeedback}
-          positiveFeedback={positiveFeedback}
+          totalFeedback={totalVotes}
+          positiveFeedback={positiveRate}
         />
       ) : (
         <Notification />

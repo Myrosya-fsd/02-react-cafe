@@ -1,5 +1,5 @@
 import React from "react";
-import css from "./Feedback.module.css";
+import css from "./VoteStats.module.css";
 
 // Типи пропсів
 type FeedbackProps = {
@@ -19,7 +19,7 @@ const Feedback: React.FC<FeedbackProps> = ({
 }) => {
   return (
     <div>
-      <ul className={css.feedback}>
+      <ul className={css.votes}>
         <li>Good: {good}</li>
         <li>Neutral: {neutral}</li>
         <li>Bad: {bad}</li>

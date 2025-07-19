@@ -1,9 +1,9 @@
 import React from "react";
-import css from "./Description.module.css";
+import css from "./CafeInfo.module.css";
 
-const Description: React.FC = () => {
+const VoteOptions: React.FC = () => {
   return (
-    <div className={css.description}>
+    <div className={css.container}>
       <h1>Sip Happens Café</h1>
       <p>
         Please leave your feedback about our service by selecting one of the
@@ -13,4 +13,4 @@ const Description: React.FC = () => {
   );
 };
 
-export default Description;
+export default VoteOptions;

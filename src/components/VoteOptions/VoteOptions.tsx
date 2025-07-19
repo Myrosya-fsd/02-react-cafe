@@ -1,6 +1,6 @@
 import React from "react";
-import css from "./Options.module.css";
-import { FeedbackOption } from "../types/votes";
+import css from "./VoteOptions.module.css";
+import { FeedbackOption } from "../../types/votes";
 
 // Типи можливих значень фідбеку
 //type FeedbackOption = "good" | "neutral" | "bad";
@@ -21,26 +21,29 @@ const Options: React.FC<OptionsProps> = ({
     <div>
       <ul className={css.options}>
         <li>
-          <button className={css.btn} onClick={() => onLeaveFeedback("good")}>
+          <button
+            className={css.button}
+            onClick={() => onLeaveFeedback("good")}
+          >
             Good
           </button>
         </li>
         <li>
           <button
-            className={css.btn}
+            className={css.button}
             onClick={() => onLeaveFeedback("neutral")}
           >
             Neutral
           </button>
         </li>
         <li>
-          <button className={css.btn} onClick={() => onLeaveFeedback("bad")}>
+          <button className={css.button} onClick={() => onLeaveFeedback("bad")}>
             Bad
           </button>
         </li>
         <li>
           {totalFeedback > 0 && (
-            <button className={css.reset} onClick={onReset}>
+            <button className={`${css.button} ${css.reset}`} onClick={onReset}>
               Reset
             </button>
           )}
