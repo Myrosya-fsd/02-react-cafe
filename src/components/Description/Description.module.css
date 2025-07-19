@@ -1,0 +1,7 @@
+.description {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  gap: 15px;
+  margin-bottom: 20px;
+}
