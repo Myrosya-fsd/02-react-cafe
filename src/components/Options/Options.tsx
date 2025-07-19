@@ -1,8 +1,9 @@
 import React from "react";
 import css from "./Options.module.css";
+import { FeedbackOption } from "../types/votes";
 
 // Типи можливих значень фідбеку
-type FeedbackOption = "good" | "neutral" | "bad";
+//type FeedbackOption = "good" | "neutral" | "bad";
 
 // Типи пропсів
 type OptionsProps = {

@@ -1,4 +1,4 @@
-// src/global.d.ts або src/declarations.d.ts
+// src/global.d.ts
 
 declare module "*.module.css" {
   const classes: { [key: string]: string };
